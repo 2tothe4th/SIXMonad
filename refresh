@@ -1,0 +1,2 @@
+cp .xinitrc ~/.xinitrc
+cp app/Main.hs ~/.config/xmonad/xmonad.hs

@@ -49,4 +49,6 @@ if [ -d "$xinitdir"/xinitrc.d ] ; then
 	unset f
 fi
 
+xmonad --recompile
+
 exec xmonad
