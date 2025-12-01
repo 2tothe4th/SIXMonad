@@ -4,11 +4,13 @@ X: xorg-server, xorg-apps, xorg, nvidia, nvidia-utils, xorg-xinit, xorg-twm, xor
 Audio: pipewire, wireplumber pipewire-audio, pipewire-alsa, pipewire-pulse
 Terminal: kitty
 Fonts: ttf-ms-win11, noto-fonts
+Misc.: git, github-cli 
 
 Here's the stuff you need to do:
 
 Start nftables.service
 Start pulseaudio.service
+Clone this repo
 Run the refresh script
 Run startx
 
