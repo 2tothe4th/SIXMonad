@@ -5,7 +5,7 @@ exec_prefix="${prefix}"
 xrdb="xrdb"
 xinitdir="/etc/X11/xinit"
 xclock="xclock"
-xterm="xterm"
+xterm="kitty"
 twm="twm"
 xmodmap="xmodmap"
 

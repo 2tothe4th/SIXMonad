@@ -17,7 +17,7 @@ main = xmonad
 
 mainConfig :: XConfig (Choose Tall (Choose (Mirror Tall) Full))
 mainConfig = def {
-    terminal = "xterm",
+    terminal = "xkitty",
     modMask = mod4Mask,
     normalBorderColor = "#202020",
     focusedBorderColor = "#ffffff",
