@@ -1,7 +1,7 @@
 sudo pacman -S xorg-server xorg-apps xorg nvidia nvidia-utils xorg-xinit xorg-twm xorg-xclock xterm pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse kitty ttf-ms-win11 noto-fonts nftables git github-cli
 
-systemctl start --now nftables
-systemctl start --now pipewire-pulse
+sudo systemctl start --now nftables
+sudo systemctl --user start --now pipewire pipewire-pulse wireplumber
 
 refresh
 
