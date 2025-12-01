@@ -3,13 +3,5 @@ sudo pacman -S xorg-server xorg-apps xorg nvidia nvidia-utils xorg-xinit xorg-tw
 systemctl start --now nftables
 systemctl start --now pipewire-pulse
 
-cd ~
-mkdir Development
-cd Development
-
-git clone https://github.com/2tothe4th/SIXMonad
-
-cd SIXMonad
-
 refresh
 
