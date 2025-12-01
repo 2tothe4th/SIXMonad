@@ -17,13 +17,12 @@ main = xmonad
 
 mainConfig :: XConfig (Choose Tall (Choose (Mirror Tall) Full))
 mainConfig = def {
+    terminal = "xterm",
     modMask = mod4Mask,
     normalBorderColor = "#202020",
-    focusedBorderColor = "#ffa0ff",
+    focusedBorderColor = "#ffffff",
     borderWidth = 4
 }
 
 ppConfig :: PP
-ppConfig = def {
-
-}
+ppConfig = def
