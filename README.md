@@ -1,18 +1,10 @@
-Hey future me, here's what you'll need:
+# Overview
 
-X: xorg-server, xorg-apps, xorg, nvidia, nvidia-utils, xorg-xinit, xorg-twm, xorg-xclock, xterm  
-Audio: pipewire, wireplumber pipewire-audio, pipewire-alsa, pipewire-pulse  
-Terminal: kitty  
-Fonts: ttf-ms-win11, noto-fonts  
-Misc.: nftables, git, github-cli   
+Hello future me, here's what you gotta do:
 
-Here's the stuff you need to do:
+* Install Arch via. the wiki and get NetworkManager up
+* Make your account
+* Reboot just in case and log in to your account
+* Clone this repo, run the init script, then run startx
 
-Start nftables.service  
-Start pipewire-pulse.service  
-Clone this repo  
-Run the refresh script  
-Run startx  
-
-
-
+From here, you use the refresh script to update the configuration files.
