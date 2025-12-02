@@ -1,7 +1,8 @@
-sudo pacman -S xorg-server xorg-apps xorg nvidia nvidia-utils xorg-xinit xorg-twm xorg-xclock xterm pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse kitty ttf-ms-win11 noto-fonts nftables git github-cli
+sudo pacman -S xorg-server xorg-apps xorg nvidia nvidia-utils xorg-xinit xorg-twm xorg-xclock xterm pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse kitty noto-fonts nftables git github-cli
 
 sudo systemctl start --now nftables
 systemctl --user start --now pipewire pipewire-pulse wireplumber
 
+mkdir ~/.config/xmonad/xmonad.hs
 bash refresh
 
