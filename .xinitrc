@@ -51,4 +51,7 @@ fi
 
 xmonad --recompile
 
+"$xterm" &
+~/.fehbg &
+xcompmgr &
 exec xmonad
