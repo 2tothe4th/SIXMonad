@@ -1,24 +1,21 @@
 module Main where
 
-import XMonad
+import XMonad hiding (float)
 import XMonad.Util.EZConfig
 import XMonad.Util.Ungrab
 
-import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
-
 import XMonad.Layout.NoBorders
+import XMonad.Layout.Fullscreen
+import XMonad.StackSet
 
 main :: IO ()
-main = xmonad 
-    . ewmhFullscreen 
-    . ewmh 
-    $ mainConfig
+main = xmonad mainConfig
 
 -- mainConfig :: XConfig (Choose Tall (Choose (Mirror Tall) (ModifiedLayout WithBorder Full)))
-mainConfig = def {
+mainConfig = fullscreenSupportBorder $ def {
     terminal = "kitty",
     modMask = mod4Mask,
     normalBorderColor = "#202020",
@@ -26,14 +23,18 @@ mainConfig = def {
     focusFollowsMouse = False,
     clickJustFocuses = False,
     borderWidth = 4,
-    layoutHook = mainLayout
+    layoutHook = mainLayout,
+    manageHook = fullscreenManageHook,
+    handleEventHook = fullscreenEventHook
 } `additionalKeysP` [
-    ("M-S-<U>", spawn "amixer sset Master 5%+"),
-    ("M-S-<D>", spawn "amixer sset Master 5%-"),
-    ("M-<Space>", spawn "rofi -show run")
+    ("M-<U>", spawn "amixer sset Master 5%+"),
+    ("M-<D>", spawn "amixer sset Master 5%-"),
+    ("M-<Space>", spawn "rofi -show run"),
+    -- https://www.reddit.com/r/xmonad/comments/hm2tg0/how_to_toggle_floating_state_on_a_window/ 
+    ("M-f", withFocused $ \window -> windows $ float window (RationalRect 0 0 1 1))
     ]
 
-mainLayout = half ||| Mirror half ||| smartBorders Full where
+mainLayout = fullscreenFull $ half ||| Mirror half ||| Full where
     half = Tall 1 (3/100) (1/2)
 
 ppConfig :: PP
