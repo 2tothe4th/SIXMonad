@@ -51,7 +51,10 @@ fi
 
 xmonad --recompile
 
+xinput set-prop 12 291 -0.12
+xinput set-prop 12 294 0 1
+
 "$xterm" &
 ~/.fehbg &
-xcompmgr &
+picom &
 exec xmonad

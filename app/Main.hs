@@ -27,7 +27,11 @@ mainConfig = def {
     clickJustFocuses = False,
     borderWidth = 4,
     layoutHook = mainLayout
-}
+} `additionalKeysP` [
+    ("M-S-<U>", spawn "amixer sset Master 5%+"),
+    ("M-S-<D>", spawn "amixer sset Master 5%-"),
+    ("M-<Space>", spawn "rofi -show run")
+    ]
 
 mainLayout = half ||| Mirror half ||| smartBorders Full where
     half = Tall 1 (3/100) (1/2)
