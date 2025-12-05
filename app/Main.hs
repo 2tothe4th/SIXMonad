@@ -27,8 +27,8 @@ mainConfig = fullscreenSupportBorder $ def {
     manageHook = fullscreenManageHook,
     handleEventHook = fullscreenEventHook
 } `additionalKeysP` [
-    ("M-<U>", spawn "amixer sset Master 5%+"),
-    ("M-<D>", spawn "amixer sset Master 5%-"),
+    ("<XF86AudioRaiseVolume>", spawn "amixer sset Master 10%+"),
+    ("<XF86AudioLowerVolume>", spawn "amixer sset Master 10%-"),
     ("M-<Space>", spawn "rofi -show run"),
     -- https://www.reddit.com/r/xmonad/comments/hm2tg0/how_to_toggle_floating_state_on_a_window/ 
     ("M-f", withFocused $ \window -> windows $ float window (RationalRect 0 0 1 1))

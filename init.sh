@@ -1,12 +1,19 @@
-sudo pacman -S xorg-server xorg-apps xorg nvidia nvidia-utils xorg-xinit xorg-twm xorg-xclock xterm xmonad xmonad-contrib \
-pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse alsa-lib udev alsa-utils alsa-firmware alsa-utils \
-kitty noto-fonts nftables git github-cli rofi feh picom
+sudo cp pacman.conf /etc/pacman.conf
+sudo pacman -Syu
+sudo pacman -S xorg-server xorg-apps xorg nvidia nvidia-utils xorg-xinit xorg-twm xorg-xrandr xorg-xmessage xmonad xmonad-contrib xorg-xinput \
+pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse \
+alsa-lib udev alsa-utils alsa-firmware alsa-utils \
+kitty noto-fonts nftables git github-cli rofi feh picom firefox flatpak scrot
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo >> /home/sixteen/.bashrc
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/sixteen/.bashrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 sudo systemctl enable --now nftables
 systemctl --user enable --now pipewire pipewire-pulse wireplumber
-feh --bg-scale background/mountain.jpg
+feh --bg-scale --slideshow-delay 1 --randomize background/* background/*
 
-mkdir -p ~/.config
 mkdir -p ~/.config/xmonad
 mkdir -p ~/.config/rofi
 mkdir -p ~/.config/kitty

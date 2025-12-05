@@ -53,6 +53,7 @@ xmonad --recompile
 
 xinput set-prop 12 291 -0.12
 xinput set-prop 12 294 0 1
+xrandr --output HDMI-0 --mode 1920x1080 --rate 74.97
 
 "$xterm" &
 ~/.fehbg &
