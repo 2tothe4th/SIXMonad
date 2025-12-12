@@ -31,7 +31,8 @@ mainConfig = fullscreenSupportBorder $ def {
     ("<XF86AudioLowerVolume>", spawn "amixer sset Master 10%-"),
     ("M-<Space>", spawn "rofi -show run"),
     -- https://www.reddit.com/r/xmonad/comments/hm2tg0/how_to_toggle_floating_state_on_a_window/ 
-    ("M-f", withFocused $ \window -> windows $ float window (RationalRect 0 0 1 1))
+    ("M-S-f", withFocused $ \window -> windows . float window $ RationalRect 0 0 1 1),
+    ("M-s", spawn "scrot -M 0 -F ~/Pictures")
     ]
 
 mainLayout = fullscreenFull $ half ||| Mirror half ||| Full where
